@@ -1,8 +1,15 @@
-# YouTube Desktop
+# Pay respect to these guys
+
+It was based on two apps.  
+1. [youtube-dektop](https://github.com/mikepruett3/youtube-desktop/tree/main) by [mikepruett3](https://github.com/mikepruett3)
+2. [demergi](https://github.com/hectorm/demergi) by [hectorm](https://github.com/hectorm)
+
+Thanks for opensource.
+# YouTube Dpi Free
 
 ![YouTube](https://github.com/mikepruett3/youtube-desktop/blob/main/images/YouTube.png?raw=true)
 
-YouTube Desktop is a simple Desktop application for watching YouTube, built using [ElectronJS](https://www.electronjs.org).
+YouTube Dpi Free is a simple Desktop application for watching YouTube, built using [ElectronJS](https://www.electronjs.org).
 
 ## Features
 
@@ -24,7 +31,7 @@ To build locally, clone the repository and install the dependencies.
 
 ```powershell
 git clone https://github.com/andrewmat2000/youtube-dpi-free
-cd youtube-desktop
+cd youtube-dpi-free
 npm install
 ```
 
@@ -39,14 +46,3 @@ To build the application installer.
 ```powershell
 npm run make
 ```
-
-## Dependencies
-
-- electron
-- electron-forge
-- electron-store
-- publisher-github
-
-## Errata
-
-Logo borrowed from [Wikipedia](https://commons.wikimedia.org/wiki/File:YouTube_social_white_circle_(2017).svg)

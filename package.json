@@ -1,8 +1,8 @@
 {
-  "name": "youtube-desktop",
+  "name": "youtube-dpi-free",
   "version": "1.0.1",
-  "productName": "YouTube Desktop",
-  "description": "A simple YouTube Desktop application, built using Electron.js",
+  "productName": "YouTube Dpi Free",
+  "description": "A simple YouTube Dpi Free application which is using dpi bypass.",
   "main": "main.js",
   "scripts": {
     "test": "electron .",
@@ -13,21 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikepruett3/youtube-desktop.git"
+    "url": "https://github.com/andrewmat2000/youtube-dpi-free.git"
   },
   "keywords": [
     "Electron",
     "Youtube"
   ],
   "author": {
-    "name": "Mike Pruett",
-    "email": "mikepruett3@gmail.com"
+    "name": "Andrey Matveev",
+    "email": "andrewmat2000@gmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mikepruett3/youtube-desktop/issues"
-  },
-  "homepage": "https://github.com/mikepruett3/youtube-desktop#readme",
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
     "@electron-forge/maker-deb": "^6.2.1",

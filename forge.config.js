@@ -1,7 +1,7 @@
 module.exports = {
   packagerConfig: {
     asar: true,
-    executableName: 'youtube-desktop',
+    executableName: 'youtube-dpi-free',
     icon: __dirname + '/images/YouTube'
   },
   rebuildConfig: {},

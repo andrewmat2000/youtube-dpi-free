@@ -3,7 +3,7 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
-require("./dist/demergi.js")
+require("./demergi.js")
 const { app, shell, session, BrowserWindow, Menu, Tray, nativeImage, dialog } = require('electron')
 const { getHA, setHA } = require('./settings.js');
 
@@ -19,7 +19,7 @@ createWindow = () => {
     const win = new BrowserWindow({
         width: 1280,
         height: 720,
-        title: 'YouTube Desktop',
+        title: 'YouTube Dpi Free',
         icon: __dirname + '/images/YouTube.ico',
         autoHideMenuBar: true,
         webPreferences: {
@@ -98,8 +98,8 @@ createWindow = () => {
         }
     ])
 
-    tray.setToolTip('YouTube Desktop')
-    tray.setTitle('YouTube Desktop')
+    tray.setToolTip('YouTube Dpi Free')
+    tray.setTitle('YouTube Dpi Free')
     tray.setContextMenu(contextMenu)
 };
 
