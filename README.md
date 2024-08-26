@@ -23,7 +23,7 @@ To run, just launch the executable via the Desktop Shortcut, or the Executable d
 To build locally, clone the repository and install the dependencies.
 
 ```powershell
-git clone https://github.com/mikepruett3/youtube-desktop.git
+git clone https://github.com/andrewmat2000/youtube-dpi-free
 cd youtube-desktop
 npm install
 ```
