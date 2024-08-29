@@ -17,7 +17,7 @@ YouTube Dpi Free is a simple Desktop application for watching YouTube, built usi
 
 ## Installation
 
-Dowload the latest [release](https://github.com/mikepruett3/youtube-desktop/releases) for Windows, Linux and MacOS.
+Dowload the latest [release](https://github.com/andrewmat2000/youtube-dpi-free/releases/tag/v.1.0) for Windows and Linux.
 
 For Windows... a standard Exectuable is provided, as well as a NuGet package. RPM and DEB packages are availbe for Linux Distrubtions (not tested!).
 
