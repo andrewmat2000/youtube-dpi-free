@@ -1,3 +1,5 @@
+[![ru](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/andrewmat2000/youtube-dpi-free/blob/main/README.md)
+
 # Уважение ребятам ниже.
 
 Данное приложение было сделано на основе двух ниже. 

@@ -1,3 +1,5 @@
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/andrewmat2000/youtube-dpi-free/blob/main/README.ru.md)
+
 # Pay respect to these guys
 
 It was based on two apps.  
