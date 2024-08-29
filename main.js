@@ -3,11 +3,52 @@
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) return;
 
+const net = require("net")
+
+function checkPort(port) {
+    return new Promise((resolve) => {
+        const server = net.createServer();
+
+        server.on("error", () => { resolve(false) })
+        server.on("listening", () => {
+            server.close();
+            resolve(true);
+        })
+
+        server.listen(port);
+    })
+}
+
+let port = 8080;
+
+const sp = require('synchronized-promise')
+
+do {
+    const fn = sp(() => checkPort(port));
+
+    console.log(`Checking '${port}' port.`);
+
+    if (fn()) {
+        console.log(`Port '${port}' is available.`);
+
+        break;
+    } else {
+
+        console.log(`Port '${port}' is not available, checking next.`);
+    }
+
+} while (port++ < 65535);
+
+
+process.env.DEMERGI_ADDRS = `[::]:${port}`;
+
 require("./demergi.js")
+
 const { app, shell, session, BrowserWindow, Menu, Tray, nativeImage, dialog } = require('electron')
 const { getHA, setHA } = require('./settings.js');
 
-app.commandLine.appendSwitch("proxy-server", "http://localhost:8080");
+console.log(`Setting proxy to ${port}.`);
+app.commandLine.appendSwitch("proxy-server", `http://localhost:${port}`);
 
 // Disable Hardware Acceleration
 // https://www.electronjs.org/docs/latest/tutorial/offscreen-rendering
@@ -71,12 +112,12 @@ createWindow = () => {
                         message: 'Exiting Applicatiom, as Hardware Acceleration setting has been changed...'
                     })
                     .then(result => {
-                      if (result.response === 0) {
-                        app.relaunch();
-                        app.exit()
-                      }
+                        if (result.response === 0) {
+                            app.relaunch();
+                            app.exit()
+                        }
                     }
-                )
+                    )
             }
         },
         {

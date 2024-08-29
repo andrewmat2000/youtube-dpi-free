@@ -32,7 +32,7 @@ module.exports = {
       config: {
         repository: {
           owner: 'mikepruett3',
-          name: 'youtube-desktop'
+          name: 'youtube-dpi-free'
         }
       }
     }
