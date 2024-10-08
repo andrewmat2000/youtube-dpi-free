@@ -61,10 +61,11 @@ getPort().then((port) => {
     }
 
     createWindow = () => {
+        /** @type {Electron.Rectangle & {isMaximized: boolean, isFullScreen: boolean}} */
         let bounds = undefined;
 
         try {
-            bounds = JSON.parse(fs.readFileSync("start-info", 'utf-8'));
+            bounds = JSON.parse(fs.readFileSync(".start-info", 'utf-8'));
         
         } catch (e) {
             console.log("Can not read start info.")
@@ -76,6 +77,7 @@ getPort().then((port) => {
             height: bounds?.height ?? 720,
             x: bounds?.x,
             y: bounds?.y,
+            fullscreen: bounds?.isFullScreen ?? false,
             title: 'YouTube Dpi Free',
             icon: __dirname + '/images/YouTube.ico',
             autoHideMenuBar: true,
@@ -87,6 +89,10 @@ getPort().then((port) => {
                 nativeWindowOpen: true
             }
         });
+
+        if(bounds?.isMaximized) {
+            win.maximize()
+        }
 
         win.loadURL(`https://www.youtube.com`);
 
@@ -137,6 +143,16 @@ getPort().then((port) => {
                 }
             },
             {
+                label: "Remove current window state",
+                click: () => {
+                    try {
+                        fs.unlinkSync(".start-info")
+                    } catch {}
+                    app.relaunch();
+                    app.exit();
+                }
+            },
+            {
                 label: 'Clear Cache',
                 click: () => {
                     session.defaultSession.clearStorageData()
@@ -173,7 +189,10 @@ getPort().then((port) => {
 
         window.on("close", () => {
             try {
-                fs.writeFileSync('start-info', JSON.stringify(window.getBounds()), { encoding: "utf-8" });
+                const bounds = window.getBounds();
+                bounds.isMaximized = window.isMaximized();
+                bounds.isFullScreen = window.isFullScreen();
+                fs.writeFileSync('.start-info', JSON.stringify(bounds), { encoding: "utf-8" });
                 console.log("Bounds saved to file.");
             }
             catch (e) {
