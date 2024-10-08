@@ -66,7 +66,7 @@ getPort().then((port) => {
 
         try {
             bounds = JSON.parse(fs.readFileSync(".start-info", 'utf-8'));
-        
+
         } catch (e) {
             console.log("Can not read start info.")
             console.log(e)
@@ -90,7 +90,7 @@ getPort().then((port) => {
             }
         });
 
-        if(bounds?.isMaximized) {
+        if (bounds?.isMaximized) {
             win.maximize()
         }
 
@@ -147,7 +147,7 @@ getPort().then((port) => {
                 click: () => {
                     try {
                         fs.unlinkSync(".start-info")
-                    } catch {}
+                    } catch { }
                     app.relaunch();
                     app.exit();
                 }
